@@ -5,6 +5,7 @@ import { Controller } from './Controller'
 import { UserRegisterSchema } from '../../application/user/schemas/userRegisterSchema'
 import { UserRegister } from '../../application/user/UserRegister'
 import { HttpResponse } from '../routes/HttpResponse'
+import { UserAlreadyExistsError } from '../../application/user/errors/UserAlreadyExistsError'
 
 type RegisterRequest = Request & { body: UserRegisterSchema }
 
@@ -15,7 +16,14 @@ export class RegisterController implements Controller {
   ) {}
 
   async run(req: RegisterRequest, res: Response): Promise<void> {
-    await this.userRegister.run(req.body)
+    try {
+      await this.userRegister.run(req.body)
+    } catch (err) {
+      if (err instanceof UserAlreadyExistsError) {
+        HttpResponse.BadRequest(res, err.message)
+      }
+    }
+
     HttpResponse.NoContent(res)
   }
 }
