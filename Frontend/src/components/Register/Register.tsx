@@ -41,15 +41,15 @@ const Register = () => {
       onSubmit={handleSubmit}
       noValidate
       autoComplete="off"
-      className="form-container"
+      className="register-form-container"
       data-testid="loginForm"
     >
-      <h1 className="form-container__login-text">Create your account</h1>
-
-      <div className="form-container__input-field">
+      <h1 className="register-form-container__login-text">Create your account</h1>
+name
+      <div className="register-form-container__input-field">
         <label htmlFor="name"></label>
         <input
-          className="form-container__input"
+          className="register-form-container__input"
           id="name"
           name="name"
           placeholder="name"
@@ -57,11 +57,11 @@ const Register = () => {
           onChange={handleInputChange}
         />
       </div>
-
-      <div className="form-container__input-field">
+email
+      <div className="register-form-container__input-field">
         <label htmlFor="email"></label>
         <input
-          className="form-container__input"
+          className="register-form-container__input"
           id="email"
           name="email"
           placeholder="wonderwoman@marvel.com"
@@ -69,10 +69,11 @@ const Register = () => {
           onChange={handleInputChange}
         />
       </div>
-      <div className="form-container__input-field">
+      password
+      <div className="register-form-container__input-field">
         <label htmlFor="password"></label>
         <input
-          className="form-container__input"
+          className="register-form-container__input"
           id="password"
           name="password"
           placeholder="********"
@@ -80,7 +81,19 @@ const Register = () => {
           onChange={handleInputChange}
         />
       </div>
-      <button className="form-container__button" type="submit">
+      confirm password
+      <div className="register-form-container__input-field">
+        <label htmlFor="password"></label>
+        <input
+          className="register-form-container__input"
+          id="password"
+          name="password"
+          placeholder="********"
+          type="password"
+          onChange={handleInputChange}
+        />
+      </div>
+      <button className="register-form-container__button" type="submit">
         Register
       </button>
     </form>

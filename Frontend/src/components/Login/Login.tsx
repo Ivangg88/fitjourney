@@ -70,14 +70,14 @@ const Login = () => {
         />
       </div>
       <div className="login-actions">
-      <button className="exercise-button" type="submit">
+      <button className="login-button" type="submit">
         Login
       </button>
       <a href="">forgot your password?</a>
       </div>
 
       <button
-        className="exercise-button"
+        className="sign-up-button"
         onClick={() => navigator("/register")}
       >
         Sing up

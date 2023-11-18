@@ -24,6 +24,8 @@ $text: (
   
   $layout: (
   "input-border": $green,
+  "button-border": $dark,
+  "button-color-login": $blue,
   "button-icon": $primary,
   "button-background": $primary,
   "header-background":$background-secondary,
@@ -31,6 +33,4 @@ $text: (
   "sidebar-background":$white,
   "base-page-background":$background,
   "feedback-background":$background-secondary,
-
-  
 );
