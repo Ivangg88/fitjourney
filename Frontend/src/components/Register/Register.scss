@@ -11,7 +11,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
+  gap: 2px;
   max-width: 500px;
   border-radius: 8px;
 
@@ -34,6 +34,7 @@
     font-weight: bolder;
     color: map.get(colors.$text, "login-text");
     margin: 0;
+    margin-bottom: 20px;;
   }
 
   &__button {
