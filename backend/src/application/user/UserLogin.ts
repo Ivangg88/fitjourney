@@ -1,8 +1,10 @@
+import { injectable } from 'tsyringe'
 import { UserRepository } from '../../domain/users/UserRepository'
 import { UserLoginReq } from './schemas/userLoginReqSchema'
-import { UserLoginRes } from '../schemas/users/userLoginResSchema'
 import { checkPassword } from '../share/passwordHash'
+import { UserLoginRes } from './schemas/userLoginResSchema'
 
+@injectable()
 export class UserLogin {
   constructor(private readonly repository: UserRepository) {}
 
