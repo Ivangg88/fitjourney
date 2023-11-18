@@ -12,7 +12,8 @@ export const Header = () => {
 
   return (
     <div className="header">
-      <span>Fitjourney</span>
+      <p className="title">FitJourney</p>
+      <img className="logo"  src="./FitJourneyLogo.png" alt="exercise" />
 
       {isLogged ? (
         <div className="header__welcome-box">
