@@ -1,0 +1,75 @@
+@use "../../styles/sass/variables/colors";
+@use "../../styles/sass/variables/fontSizes";
+@use "../../styles/sass/variables/responsive";
+@use "sass:map";
+
+
+.exercise{
+  max-width: 370px;
+  min-height: 580px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: aliceblue;
+  padding: 20px;
+  gap: 10px;
+  border-radius: 15px;
+
+  &__title{
+    text-align: center;
+  }
+
+  &__picture {
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+    box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.75);
+  }
+
+  &__instructions{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: #999;
+    padding: 0;
+    padding-left: 20px;
+    border: 1px solid black;
+  }
+
+  &__actions-container{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border: 1px solid black;
+    height: 45px;
+
+
+  }
+
+}
+
+.actions-container{
+  &__button{
+    width: 100px;
+    background-color: pink;
+    border-radius: 15px;
+    font-weight: bold;
+    color: white;
+    font-size: 20px;
+    &--stop{
+      background-color: red;
+    }
+
+
+    &--start{
+      background-color: green;
+    }
+  }
+  
+  &__chrono{
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    }
+}

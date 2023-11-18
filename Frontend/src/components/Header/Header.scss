@@ -30,20 +30,39 @@ font-size:map.get(fontSizes.$fontSize, "header-title");
 
   &__welcome-box{
     display: flex;
+    gap:100px;
     align-items: center;
-    justify-content: space-between;
-    width: 30%;
-    min-width:250px ;
+    justify-content: flex-end;
+    width: 60%;
+    min-width:200px ;
     font-size:map.get(fontSizes.$fontSize, "header-links");
     color: map.get(colors.$layout, "header-links");
   }
 
   &__user-action {
-    display: flex;
-    gap: 15px;
-    color: map.get(colors.$layout, "header-links");
-    font-size:map.get(fontSizes.$fontSize, "header-links");
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    border: 2px solid map.get(colors.$layout, "button-border");
+    border-radius: 5px;
+    color: map.get(colors.$text, "login-text");
+    background-color: map.get(colors.$layout, "base-page-background");
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    width: 100px;
   }
+}
+
+.welcome-box {
+  &__progress-status{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+
 }
 
 @media (max-width: map.get(responsive.$responsive,"mobile")) {
@@ -56,4 +75,28 @@ font-size:map.get(fontSizes.$fontSize, "header-title");
         justify-content: space-between;
       }
     }
+}
+
+
+.progress {
+	background-color: #d8d8d8;
+	border-radius: 20px;
+	position: relative;
+	margin: 15px 0;
+	height: 15px;
+	width: 120px;
+}
+
+.progress-done {
+  background-color: #0FA861;
+	box-shadow: 0 3px 3px -5px #0FA861, 0 2px 5px #D4FA96;	
+  border-radius: 20px;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 0;
+	opacity: 0;
+	transition: 1s ease 0.3s;
 }

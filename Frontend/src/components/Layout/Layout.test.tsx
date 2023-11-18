@@ -12,7 +12,7 @@ describe("Given a HOC Layout", () => {
 
       renderWithProviders(mockComponentWithLayout);
 
-      const header = screen.getByText("Fitjourney");
+      const header = screen.getByText("FitJourney");
       const receivedMockComponent = screen.getByText(mockComponentText);
 
       expect(header).toBeInTheDocument();
