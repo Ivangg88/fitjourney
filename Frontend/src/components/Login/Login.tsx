@@ -36,6 +36,8 @@ const Login = () => {
   };
 
   return (
+    <>
+    <p>where your health is rewarded</p>
     <form
       onSubmit={handleSubmit}
       noValidate
@@ -43,7 +45,6 @@ const Login = () => {
       className="form-container"
       data-testid="loginForm"
     >
-      <h1 className="form-container__login-text">Welcome to Fitjourney</h1>
 
       <div className="form-container__input-field">
         <label htmlFor="userName"></label>
@@ -51,7 +52,7 @@ const Login = () => {
           className="form-container__input"
           id="userName"
           name="userName"
-          placeholder="username"
+          placeholder="email"
           type="text"
           onChange={handleInputChange}
         />
@@ -68,18 +69,19 @@ const Login = () => {
           onChange={handleInputChange}
         />
       </div>
-      <button className="form-container__button" type="submit">
+      <button className="exercise-button" type="submit">
         Login
       </button>
+      <div><a href="">forgot your password?</a></div>
 
-      <p>Not a member?</p>
       <button
-        className="form-container__button"
+        className="exercise-button"
         onClick={() => navigator("/register")}
       >
-        Sing up here
+        Sing up
       </button>
     </form>
+    </>
   );
 };
 

@@ -4,6 +4,8 @@
 @use "sass:map";
 
 .form-container {
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -11,6 +13,7 @@
   gap: 30px;
 
   &__input-field {
+    margin:5px;
     width: 50%;
   }
 
@@ -38,6 +41,21 @@
   &__button:hover {
     scale: calc(1.5);
   }
+}
+
+.exercise-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid #3498db;
+  border-radius: 5px;
+  color: #3498db;
+  background-color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  width: 100px;
 }
 
 
