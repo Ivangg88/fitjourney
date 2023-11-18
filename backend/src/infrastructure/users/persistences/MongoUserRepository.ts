@@ -3,6 +3,7 @@ import { MongoClient, ObjectId } from 'mongodb'
 import { User } from '../../../domain/users/User'
 import { UserRepository } from '../../../domain/users/UserRepository'
 import { MongoBaseRepository } from '../../shared/persistence/mongo/MongoBaseRepository'
+import { WeeklyPlan } from '../../../domain/users/WeeklyPlan'
 
 interface UserDocument {
   _id: string
@@ -12,6 +13,7 @@ interface UserDocument {
   height_cm: number
   weight_kg: number
   age: number
+  weeklyPlans: WeeklyPlan[]
 }
 @injectable()
 export class MongoUserRepository
