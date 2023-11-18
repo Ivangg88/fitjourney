@@ -1,5 +1,3 @@
-export interface InitialDataState {}
-
 export interface UiData {
   isLoading: boolean;
 }
@@ -22,4 +20,22 @@ export interface UserLoged {
 export interface Token {
   userName: string;
   isLogged: boolean;
+}
+
+export interface Exercise {
+  id: string;
+  name: string;
+  force: string;
+  level: string;
+  mechanic: string;
+  equipment: string;
+  primaryMuscles: string[];
+  secondaryMuscles: string[];
+  instructions: string[];
+  category: string;
+  images: string[];
+}
+
+export interface InitialDataState {
+  exercises: Array<Exercise>;
 }
