@@ -37,7 +37,7 @@ const Login = () => {
 
   return (
     <>
-    <p>where your health is rewarded</p>
+    <p className="impact-phrase">where your health is rewarded</p>
     <form
       onSubmit={handleSubmit}
       noValidate
@@ -69,10 +69,12 @@ const Login = () => {
           onChange={handleInputChange}
         />
       </div>
+      <div className="login-actions">
       <button className="exercise-button" type="submit">
         Login
       </button>
-      <div><a href="">forgot your password?</a></div>
+      <a href="">forgot your password?</a>
+      </div>
 
       <button
         className="exercise-button"
