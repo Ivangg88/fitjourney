@@ -11,10 +11,11 @@ export const mockExercise: Exercise = {
   secondaryMuscles: ["forearms"],
   instructions: [
     "Sit down on an incline bench with a dumbbell in each hand being held at arms length. Tip: Keep the elbows close to the torso. This will be your starting position.",
+    "Sit down on an incline bench with a dumbbell in each hand being held at arms length. Tip: Keep the elbows close to the torso. This will be your starting position.",
   ],
   category: "strength",
   images: [
-    "Alternate_Incline_Dumbbell_Curl/0.jpg",
+    "https://fitnessprogramer.com/wp-content/uploads/2021/02/Pull-up.gif",
     "Alternate_Incline_Dumbbell_Curl/1.jpg",
   ],
 };

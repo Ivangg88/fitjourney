@@ -1,25 +1,26 @@
 $primary: #000000;
 $background: #ffffff;
 $background-secondary:#ffffff;
-$text-base:#999999;
+$text-base:#000000;
 $dark: #0f8ca8;
 $white: #ffffff;
 $gold:#F69038;
 $blue:#90e3f5;
 $green:#0FA861;
 $mindaro:#D4FA96;
+$red: #FF5454;
 
 
 
 $text: (
   "header-title":$primary,
   "header-links":$primary,
-  "post-detail-title":$white,
-  "post-detail-body":$white,
-  "post-detail-author":$primary,
   "notfound-page-texts":$primary,
   "login-text":$primary,
-  "feedback":$primary
+  "feedback":$primary,
+  "card-title":$text-base,
+  "card-content":$text-base,
+  "actions-button-title":$white
   );
   
   $layout: (
@@ -33,4 +34,8 @@ $text: (
   "sidebar-background":$white,
   "base-page-background":$background,
   "feedback-background":$background-secondary,
+  "shadows":$primary,
+  "button-red":$red,
+  "button-green":$green,
+  "card-background":$background
 );
