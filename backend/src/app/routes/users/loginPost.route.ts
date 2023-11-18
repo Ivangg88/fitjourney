@@ -8,7 +8,7 @@ import { LoginController } from '../../controllers/LoginController'
 export const register = (router: Router): void => {
   const userCtrl = container.resolve(LoginController)
   router.post(
-    '/login',
+    '/users/login',
     validate(z.object({ body: userLoginReqSchema })),
     // eslint-disable-next-line @typescript-eslint/no-misused-promises
     async (req: Request, res: Response) => await userCtrl.run(req, res)
