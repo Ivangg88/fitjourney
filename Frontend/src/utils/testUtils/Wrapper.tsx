@@ -8,7 +8,7 @@ interface WrapperProps {
   children: JSX.Element | JSX.Element[];
 }
 const preloadStore: PreloadedState<RootState> = {
-  data: {},
+  data: { exercises: [] },
   ui: { isLoading: false },
 };
 const store = setupStore(preloadStore);

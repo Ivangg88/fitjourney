@@ -1,5 +1,16 @@
 import { Token, UserLoged } from "../types/interfaces";
 
+export const initialUser: UserLoged = {
+  userName: "",
+  birthDate: "",
+  email: "",
+  height: "",
+  weight: "",
+  isLogged: false,
+  registerDate: "",
+  token: "",
+};
+
 export const getInitialUser = (): UserLoged => {
   const token = localStorage.getItem("token");
 
@@ -7,6 +18,7 @@ export const getInitialUser = (): UserLoged => {
     const user: Token = JSON.parse(token);
 
     const userLoged: UserLoged = {
+      ...initialUser,
       userName: user.userName,
       isLogged: true,
       token: token,
@@ -14,11 +26,7 @@ export const getInitialUser = (): UserLoged => {
 
     return userLoged;
   }
-  return {
-    isLogged: false,
-    userName: "",
-    token: "",
-  };
+  return initialUser;
 };
 
 export const initialLoggedUser = getInitialUser();
