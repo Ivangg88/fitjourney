@@ -13,3 +13,8 @@ export interface Token {
   userName: string;
   isLogged: boolean;
 }
+
+export interface LoginUser {
+  userName: string;
+  password: string;
+}
