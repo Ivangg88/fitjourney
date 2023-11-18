@@ -12,7 +12,7 @@ export class UserLogin {
   ) {}
 
   async run({ email, password }: UserLoginReq): Promise<UserLoginRes> {
-    const user = await this.repository.search(email)
+    const user = await this.repository.searchByEmail(email)
     if (!user) {
       throw new InvalidCredentialsError('Invalid Credential')
     }

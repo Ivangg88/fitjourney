@@ -17,11 +17,17 @@ export class User extends BaseEntity {
     name: string
     email: string
     password: string
+    height_cm: number
+    weight_kg: number
+    age: number
   }): User {
     return new User(
       plainData.name,
       plainData.email,
       plainData.password,
+      plainData.height_cm,
+      plainData.weight_kg,
+      plainData.age,
       plainData.id
     )
   }

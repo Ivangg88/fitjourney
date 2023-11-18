@@ -21,7 +21,7 @@ export class UserRegister {
   }: UserRegisterSchema): Promise<void> {
     // search user by email
     // if user exists, throw error
-    const userExists = await this.repository.search(email)
+    const userExists = await this.repository.searchByEmail(email)
     if (userExists) {
       throw new UserAlreadyExistsError(email)
     }
