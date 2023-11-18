@@ -38,4 +38,5 @@ export interface Exercise {
 
 export interface InitialDataState {
   exercises: Array<Exercise>;
+
 }

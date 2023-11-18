@@ -3,10 +3,23 @@
 @use "../../styles/sass/variables/responsive";
 @use "sass:map";
 
+.logo {
+  height:40px;
+   width: auto;
+}
+
+.title {
+  font-family: 'Lato', sans-serif;
+  font-size:3rem;
+  margin: 5px;
+}
+
 
 .header {
-width: 100%;
+width: 80%;
 padding: 10px 25px;
+margin-left: 10px;
+margin-right: 10px;
 display: flex;
 justify-content: space-between;
 align-items: center;

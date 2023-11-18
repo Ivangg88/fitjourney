@@ -9,6 +9,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 30px;
-  background: map.get(colors.$layout, "base-page-background");
+  background-image: url("../../../public/undraw_workout_gcgu.svg");
+  background-repeat: no-repeat;
+  
 }

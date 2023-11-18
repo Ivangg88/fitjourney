@@ -5,7 +5,7 @@ import "./NotFoundPage.scss";
 const NotFoundPage = () => {
   const notFoundPage = (
     <div className="notfound-page">
-      <h1>Cleverposts</h1>
+      <h1>Fitjourney</h1>
       <h2>Page not found</h2>
       <p>
         Sorry, the page you are looking for does not exist or has been removed.

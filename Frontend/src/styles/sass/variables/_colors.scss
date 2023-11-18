@@ -1,11 +1,14 @@
-$primary: #C91915;
-$background: #101010;
-$background-secondary:#010232;
+$primary: #000000;
+$background: #ffffff;
+$background-secondary:#ffffff;
 $text-base:#999999;
-$dark: #999999;
+$dark: #0f8ca8;
 $white: #ffffff;
-$gold:#FFD700;
-$green:#6AA84F;
+$gold:#F69038;
+$blue:#90e3f5;
+$green:#0FA861;
+$mindaro:#D4FA96;
+
 
 
 $text: (
@@ -20,6 +23,9 @@ $text: (
   );
   
   $layout: (
+  "input-border": $green,
+  "button-border": $dark,
+  "button-color-login": $blue,
   "button-icon": $primary,
   "button-background": $primary,
   "header-background":$background-secondary,
@@ -27,6 +33,4 @@ $text: (
   "sidebar-background":$white,
   "base-page-background":$background,
   "feedback-background":$background-secondary,
-
-  
 );

@@ -8,6 +8,10 @@ import "./App.scss";
 import Loading from "../Loading/Loading";
 import withLayout from "../Layout/Layout";
 import withBasePage from "../../pages/BasePage/BasePage";
+import withCredentials from "../CredentialRoutes/CredentialRoutes";
+import LoginPage from "../../pages/LoginPage/LoginPage";
+import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage";
+import RegisterPage from "../../pages/RegisterPage/RegisterPage";
 
 const App = (): JSX.Element => {
   const { isLoading } = useAppSelector((state: RootState) => state.ui);
@@ -30,9 +34,14 @@ const App = (): JSX.Element => {
       {isLoading ? <Loading /> : null}
       <Routes>
         <Route path="/" element={<Navigate to={"/home"} />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/*" element={<NotFoundPage />} />
         <Route
           path="/home"
-          element={withLayout(withBasePage(<h1>FitJourney</h1>))}
+          element={withCredentials(
+            withLayout(withBasePage(<h1>FitJourney</h1>))
+          )}
         />
       </Routes>
     </>
