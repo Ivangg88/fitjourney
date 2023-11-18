@@ -1,0 +1,32 @@
+$primary: #C91915;
+$background: #101010;
+$background-secondary:#010232;
+$text-base:#999999;
+$dark: #999999;
+$white: #ffffff;
+$gold:#FFD700;
+$green:#6AA84F;
+
+
+$text: (
+  "header-title":$primary,
+  "header-links":$primary,
+  "post-detail-title":$white,
+  "post-detail-body":$white,
+  "post-detail-author":$primary,
+  "notfound-page-texts":$primary,
+  "login-text":$primary,
+  "feedback":$primary
+  );
+  
+  $layout: (
+  "button-icon": $primary,
+  "button-background": $primary,
+  "header-background":$background-secondary,
+  "header-shadow":$background-secondary,
+  "sidebar-background":$white,
+  "base-page-background":$background,
+  "feedback-background":$background-secondary,
+
+  
+);
