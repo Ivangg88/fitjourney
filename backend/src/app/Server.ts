@@ -1,6 +1,6 @@
 import { json, urlencoded } from 'body-parser'
 import cors from 'cors'
-import express, { Request, Response, Router } from 'express'
+import express, { Router } from 'express'
 import helmet from 'helmet'
 import * as http from 'http'
 
@@ -20,24 +20,7 @@ export class Server {
     const router = Router()
     this.express.use(router)
     registerRoutes(router)
-    /* router.use(
-      (err: Error, _req: Request, res: Response, _next: () => void) => {
-        // eslint-disable-next-line no-console
-        console.log(err)
-        HttpResponse.Error(res, 'Contact to an admin')
-        _next()
-      }
-    )
-    this.express.use(
-      (err: Error, _req: Request, res: Response, _next: () => void) => {
-        // eslint-disable-next-line no-console
-        console.log(err)
-        HttpResponse.Error(res, 'Server error')
-        _next()
-      }
-    ) */
     this.express.use(errorMiddleware)
-    router.use(errorMiddleware)
   }
 
   async listen(): Promise<void> {
