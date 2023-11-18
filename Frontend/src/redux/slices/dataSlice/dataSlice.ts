@@ -1,7 +1,8 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { Exercise, InitialDataState } from "../../../types/interfaces";
+import { mockInitialExercise } from "../../../utils/mockData";
 
-const initialDataState: InitialDataState = { exercises: [] };
+const initialDataState: InitialDataState = { exercises: [mockInitialExercise] };
 
 const dataSlice = createSlice({
   name: "data",

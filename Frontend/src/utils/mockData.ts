@@ -20,6 +20,20 @@ export const mockExercise: Exercise = {
   ],
 };
 
+export const mockInitialExercise: Exercise = {
+  id: "",
+  name: "",
+  force: "",
+  level: "",
+  mechanic: "",
+  equipment: "",
+  primaryMuscles: [],
+  secondaryMuscles: [],
+  instructions: [],
+  category: "",
+  images: ["", ""],
+};
+
 export const mockInitialDataState: InitialDataState = {
   exercises: [],
 };
