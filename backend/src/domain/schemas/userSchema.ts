@@ -5,4 +5,7 @@ export const userSchema = z.object({
   email: z.string().email().openapi({ example: 'user@example.cat' }),
   password: z.string().min(8),
   name: z.string().nonempty(),
+  height_cm: z.number().positive(),
+  weight_kg: z.number().positive(),
+  age: z.number().positive(),
 })
