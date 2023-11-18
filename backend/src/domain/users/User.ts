@@ -12,4 +12,17 @@ export class User extends BaseEntity {
   ) {
     super(id)
   }
+  static fromPrimitives(plainData: {
+    id: string
+    name: string
+    email: string
+    password: string
+  }): User {
+    return new User(
+      plainData.name,
+      plainData.email,
+      plainData.password,
+      plainData.id
+    )
+  }
 }

@@ -5,6 +5,8 @@ import { MongoUserRepository } from '../infrastructure/users/persistences/MongoU
 import { UserRepository } from '../domain/users/UserRepository'
 import { UserRegister } from '../application/user/UserRegister'
 import { RegisterController } from '../app/controllers/RegisterController'
+import { UserLogin } from '../application/user/UserLogin'
+import { LoginController } from '../app/controllers/LoginController'
 
 export class DependencyInjection {
   public static async RegisterDependencies(): Promise<void> {
@@ -33,5 +35,8 @@ export class DependencyInjection {
     // dependencies for UserRegister
     container.register('UserRegister', { useClass: UserRegister })
     container.register('RegisterController', { useClass: RegisterController })
+    // dependencies for UserLogin
+    container.register('UserLogin', { useClass: UserLogin })
+    container.register('LoginController', { useClass: LoginController })
   }
 }
