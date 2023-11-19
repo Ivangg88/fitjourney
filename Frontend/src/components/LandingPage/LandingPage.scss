@@ -3,7 +3,30 @@
 @use "../../styles/sass/variables/responsive";
 @use "sass:map";
 
+.wod{
+  border: 2px solid #3498db;
+  border-radius: 8px;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0% {
+    border-color: #3498db; 
+    box-shadow: 0 0 10px 0 #3498db; 
+  }
+  50% {
+    border-color: #3498db; 
+    box-shadow: 0 0 20px 0 #3498db;
+  }
+  100% {
+    border-color: #3498db; 
+    box-shadow: 0 0 10px 0 #3498db; 
+  }
+}
 
+.wod-image{
+  height: 100px;
+  width: autos;
+}
 .plan-workout {
   display: flex;
   flex-direction: row;

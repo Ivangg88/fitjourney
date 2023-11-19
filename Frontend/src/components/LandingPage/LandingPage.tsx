@@ -22,7 +22,8 @@ const LandingPage = () => {
       <div className="card-plan__current-plan"><img className="image-reward" src="./muscle-mass.png" alt="exercise" /></div>
       <div className="card-plan__next-plan"><img className="image-reward" src="./rope.png" alt="exercise" /></div>
     </div>
-     <div>WoD</div>
+     <div className="wod">
+      <div className="wod-image"><img src="wod.svg" alt="workout of the day" /></div></div>
      <div>streaks</div>
     </div>
     </>
