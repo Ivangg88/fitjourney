@@ -14,6 +14,7 @@ interface UserDocument {
   weight_kg: number
   age: number
   weeklyPlans: WeeklyPlan[]
+  experience: number
 }
 @injectable()
 export class MongoUserRepository

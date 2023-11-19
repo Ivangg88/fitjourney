@@ -10,9 +10,21 @@ export class User extends BaseEntity {
     readonly weight_kg: number,
     readonly age: number,
     readonly id?: string,
-    readonly weeklyPlans: WeeklyPlan[] = []
+    readonly weeklyPlans: WeeklyPlan[] = [],
+    public experience: number = 0
   ) {
     super(id)
+  }
+  public addExperience(experience: number): void {
+    this.experience += experience
+  }
+
+  public getActiveWeeklyPlan(): WeeklyPlan | undefined {
+    return this.weeklyPlans.find((wp) => wp.isActive)
+  }
+
+  public getWeeklyPlanById(weeklyPlanId: string): WeeklyPlan | undefined {
+    return this.weeklyPlans.find((wp) => wp.id === weeklyPlanId)
   }
 
   public markWeeklyPlanAsActive(weeklyPlanId: string): void {
@@ -59,6 +71,7 @@ export class User extends BaseEntity {
     weight_kg: number
     age: number
     weeklyPlans: WeeklyPlan[]
+    experience: number
   }): User {
     return new User(
       plainData.name,
@@ -68,7 +81,8 @@ export class User extends BaseEntity {
       plainData.weight_kg,
       plainData.age,
       plainData.id,
-      plainData.weeklyPlans
+      plainData.weeklyPlans,
+      plainData.experience
     )
   }
 }

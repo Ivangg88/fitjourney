@@ -5,6 +5,7 @@ export class DailyPlan {
     public dayOfWeek: number,
     public exercises: Exercise[],
     public id?: string,
+    public experience = 10,
     public isCompleted: boolean = false
   ) {}
 }
