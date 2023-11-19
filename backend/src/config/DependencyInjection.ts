@@ -9,11 +9,14 @@ import { UserLogin } from '../application/user/UserLogin'
 import { LoginController } from '../app/controllers/LoginController'
 import { UserInfo } from '../application/user/UserInfo'
 import { MeController } from '../app/controllers/MeController'
+import { MongoExercisesRepository } from '../infrastructure/users/persistences/MongoExercicesRepository'
+import { ExerciseRepository } from '../domain/exercises/ExerciseRepository'
 
 export class DependencyInjection {
   public static async RegisterDependencies(): Promise<void> {
     await this.InstallMongoDependencies()
     this.InstallUserDependencies()
+    this.InstallExerciseDependencies()
   }
 
   /**
@@ -43,5 +46,12 @@ export class DependencyInjection {
     // dependencies for UserInfo
     container.register('UserInfo', { useClass: UserInfo })
     container.register('MeController', { useClass: MeController })
+  }
+
+  private static InstallExerciseDependencies(): void {
+    // dependencies for exercise repository
+    container.register<ExerciseRepository>('ExerciseRepository', {
+      useClass: MongoExercisesRepository,
+    })
   }
 }

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/naming-convention */
 import { inject, injectable } from 'tsyringe'
 import { MongoClient, ObjectId } from 'mongodb'
 import { MongoBaseRepository } from '../../shared/persistence/mongo/MongoBaseRepository'
@@ -32,6 +33,18 @@ export class MongoExercisesRepository
 {
   constructor(@inject('MongoClient') client: MongoClient) {
     super(client)
+  }
+
+  async getRandomExercises(): Promise<Exercise[]> {
+    const collection = await this.collection()
+    const documents = await collection
+      .aggregate<ExerciseDocument>([{ $sample: { size: 20 } }])
+      .toArray()
+
+    return documents.map((document) => {
+      const { _id, ...base } = document
+      return Exercise.fromPrimitives({ id: _id, ...base })
+    })
   }
 
   save(exercise: Exercise): Promise<void> {
