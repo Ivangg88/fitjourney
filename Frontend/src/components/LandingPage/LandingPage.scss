@@ -3,10 +3,15 @@
 @use "../../styles/sass/variables/responsive";
 @use "sass:map";
 
+//wod card
 .wod{
   border: 2px solid #3498db;
   border-radius: 8px;
   animation: pulse 2s infinite;
+  max-width: 100%;
+  max-height: 100%;
+  height:auto;
+  width: auto; 
 }
 @keyframes pulse {
   0% {
@@ -22,10 +27,19 @@
     box-shadow: 0 0 10px 0 #3498db; 
   }
 }
-
+.wod-img {
+  height: 100%;
+  width: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  padding: 30px;
+}
 .wod-image{
-  height: 100px;
-  width: autos;
+  height:auto;
+  width: auto; 
+  max-height: 100%;
+  max-width: 100%;
+  padding: 30px;
 }
 .plan-workout {
   display: flex;
@@ -44,7 +58,6 @@
   box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.2);
   position: absolute;
 
-
   &__previous-plan {
     border-radius: 8px;
     box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
@@ -57,7 +70,7 @@
   &__current-plan {
     border-radius: 8px;
     box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
-    background-color: map.get(colors.$layout, "gold"); 
+    background-color: map.get(colors.$layout, "button-color-login"); 
     filter:brightness(120%);
     z-index: 2;
   }
@@ -65,7 +78,7 @@
   &__next-plan {
     border-radius: 8px;
     box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
-    background-color: map.get(colors.$layout, "gold"); 
+    background-color: map.get(colors.$layout, "text-base"); 
     filter:opacity(40%);
     z-index: 1; 
     transform: translate(-120px)
@@ -74,7 +87,7 @@
   border: 1px solid #b5a886;
 
   color: #2e2e2e;
-  font-family: 'Times New Roman', serif; /* Choose a serif font for a classic feel */
+  font-family: 'Times New Roman', serif; 
 }
 
 
@@ -86,8 +99,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
-  max-width: 500px;
+  gap: 40px;
+  max-width: 1000px;
   border-radius: 8px;
 
  
