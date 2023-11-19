@@ -7,6 +7,8 @@
     max-height: 100%;
     height:auto;
     width: auto; 
+    cursor: pointer;
+    &:hover{scale: calc(1.05);}
   }
   @keyframes pulse {
     0% {
@@ -37,7 +39,4 @@
     padding: 30px;
   }
 
-  cursor: pointer;
-  &:hover{scale: calc(1.05);}
-}
 

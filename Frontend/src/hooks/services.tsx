@@ -66,6 +66,7 @@ export async function fetchUser(): Promise<UserFromDB | null> {
     toast.error((error as Error).message);
     return null;
   }
+}
 
 
 
@@ -78,18 +79,6 @@ export const fetchPatient = async (token: string | null) => {
 	})
 	return response
 }
-
-export const fetchGetLoser = async (token: string | null) => {
-	const response = await fetch(`http://localhost:3001/users/ranking/loser`, {
-		method: "GET",
-		headers: {
-			Authorization: `Bearer ${token}`,
-
-		}
-	})
-	return response
-}
-
 
 
 export const fetchRegistration = async (data: RegistrationData | null) => {
