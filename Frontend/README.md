@@ -9,7 +9,7 @@ Este proyecto utiliza varias tecnologías y librerías clave:
 - **React**: Una biblioteca de JavaScript para construir interfaces de usuario.
 - **TypeScript**: Un superconjunto de JavaScript que añade tipado estático y objetos basados en clases.
 - **Redux**: Una biblioteca de JavaScript para gestionar el estado de la aplicación.
-- **SaaS**: Un preprocesador de CSS que añade características como variables, anidamiento y mixins.
+- **SCSS**: Un preprocesador de CSS que añade características como variables, anidamiento y mixins.
 
 ## Cómo Utilizar
 
