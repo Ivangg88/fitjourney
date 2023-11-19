@@ -3,6 +3,7 @@ import "./LandingPage.scss";
 import { LoginUser } from "../../types/interfaces";
 import { useNavigate } from "react-router";
 import { useAppDispatch } from "../../redux/hooks";
+import Wod from "../Wod/Wod";
 
 const initialUser: LoginUser = { password: "", userName: "" };
 
@@ -22,9 +23,7 @@ const LandingPage = () => {
       <div className="card-plan__current-plan"><img className="image-reward" src="./muscle-mass.png" alt="exercise" /></div>
       <div className="card-plan__next-plan"><img className="image-reward" src="./rope.png" alt="exercise" /></div>
     </div>
-     <div className="wod">
-      <div className="wod-image"><img className="wod-img" src="wod.svg" alt="workout of the day" /></div></div>
-     <div>streaks</div>
+     <Wod />
     </div>
     </>
   );
