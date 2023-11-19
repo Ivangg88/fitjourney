@@ -3,7 +3,7 @@ import { container } from 'tsyringe'
 import z from 'zod'
 import { validate } from '../../middleware/validate'
 import { userLoginReqSchema } from '../../../application/user/schemas/userLoginReqSchema'
-import { LoginController } from '../../controllers/LoginController'
+import { LoginController } from '../../controllers/users/LoginController'
 
 export const register = (router: Router): void => {
   const userCtrl = container.resolve(LoginController)

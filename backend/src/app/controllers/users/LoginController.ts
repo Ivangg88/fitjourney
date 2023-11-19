@@ -1,12 +1,12 @@
 import { Request, Response } from 'express'
 import { injectable, inject } from 'tsyringe'
 import jwt from 'jsonwebtoken'
-import { Controller } from './Controller'
-import { HttpResponse } from '../routes/HttpResponse'
-import { UserLogin } from '../../application/user/UserLogin'
-import { UserLoginReq } from '../../application/user/schemas/userLoginReqSchema'
-import { InvalidCredentialsError } from '../../application/user/InvalidCredentialsError'
-import { appConfig } from '../../config/envs'
+import { Controller } from '../Controller'
+import { HttpResponse } from '../../routes/HttpResponse'
+import { UserLogin } from '../../../application/user/UserLogin'
+import { UserLoginReq } from '../../../application/user/schemas/userLoginReqSchema'
+import { InvalidCredentialsError } from '../../../application/user/InvalidCredentialsError'
+import { appConfig } from '../../../config/envs'
 
 type RegisterRequest = Request & { body: UserLoginReq }
 

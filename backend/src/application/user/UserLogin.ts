@@ -20,6 +20,6 @@ export class UserLogin {
       throw new InvalidCredentialsError('Invalid Credential')
     }
 
-    return { id: user.id }
+    return { id: user.id! }
   }
 }

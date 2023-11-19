@@ -1,9 +1,9 @@
 import { Request, Response, Router } from 'express'
 import { container } from 'tsyringe'
 import z from 'zod'
-import { RegisterController } from '../../controllers/RegisterController'
 import { validate } from '../../middleware/validate'
 import { userRegisterSchema } from '../../../application/user/schemas/userRegisterSchema'
+import { RegisterController } from '../../controllers/users/RegisterController'
 
 export const register = (router: Router): void => {
   const userCtrl = container.resolve(RegisterController)

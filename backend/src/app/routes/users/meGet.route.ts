@@ -1,7 +1,7 @@
 import { Request, Response, Router } from 'express'
 import { container } from 'tsyringe'
 import { authenticateMiddleware } from '../../middleware/authMiddleware'
-import { MeController } from '../../controllers/MeController'
+import { MeController } from '../../controllers/users/MeController'
 
 export const register = (router: Router): void => {
   const userCtrl = container.resolve(MeController)
