@@ -56,13 +56,12 @@ export const fetchGameList = async (token: string | null, id: string | null) => 
 	return response
 }
 
-export const fetchGetWinner = async (token: string | null) => {
-	const response = await fetch(`http://localhost:3001/users/ranking/winner`, {
+export const fetchPatient = async (token: string | null) => {
+	const response = await fetch(`http://localhost:3001/users/me`, {
 		method: "GET",
 		headers: {
-			Authorization: `Bearer ${token}`,
-
-		}
+		},
+		body: JSON.stringify(token)
 	})
 	return response
 }

@@ -5,54 +5,6 @@
 
 //wod card
 
-.plan-workout {
-  display: flex;
-  flex-direction: row;
-}
-
-.image-reward {
-  height:200px;
-  width: auto; 
-  max-width: 200px;
-}
-
-.card-plan {
-  background-color: #f3ecd8; 
-  border-radius: 8px;
-  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.2);
-  position: absolute;
-
-  &__previous-plan {
-    border-radius: 8px;
-    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
-    background-color: map.get(colors.$layout, "previous-workout"); 
-    filter:opacity(40%);
-    z-index: 1; 
-    transform: translate(120px)
-  }
-
-  &__current-plan {
-    border-radius: 8px;
-    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
-    background-color: map.get(colors.$layout, "button-color-login"); 
-    filter:brightness(120%);
-    z-index: 2;
-  }
-  
-  &__next-plan {
-    border-radius: 8px;
-    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
-    background-color: map.get(colors.$layout, "text-base"); 
-    filter:opacity(40%);
-    z-index: 1; 
-    transform: translate(-120px)
-  }
-
-  border: 1px solid #b5a886;
-
-  color: #2e2e2e;
-  font-family: 'Times New Roman', serif; 
-}
 
 
 .container {
