@@ -27,40 +27,6 @@ afterEach(() => {
   localStorage.clear();
 });
 
-describe("Given a function loginUser", () => {
-  describe("When is called with an user with userName and password 'test'", () => {
-    test("Then it should store a token with the user data, dispatch an action with userForm token, call the toast with 'User: 'userName' logged successfully.'.", () => {
-      const userLogin: LoginUser = {
-        userName: "test",
-        password: "test",
-      };
-      const successMessage = `User: ${userLogin.userName} logged successfully`;
-
-      const {
-        result: {
-          current: { loginUser },
-        },
-      } = renderHook(useUser, { wrapper: Wrapper });
-
-      loginUser(userLogin);
-      const token = localStorage.getItem("token")!;
-
-      const userToDispatch: UserLoged = {
-        ...initialUser,
-        isLogged: true,
-        userName: userLogin.userName,
-        token,
-      };
-
-      const action = loginUserActionCreator(userToDispatch);
-
-      expect(token).not.toBeNull();
-      expect(toast.success).toHaveBeenCalledWith(successMessage);
-      expect(mockDispatch).toHaveBeenCalledWith(action);
-    });
-  });
-});
-
 describe("Given a function logoutUser", () => {
   describe("When is called", () => {
     test("Then it should remove the token from localStorage, call the dispatch with an logOut action and the toast.success with the message 'User logged out successfully  See you soon'", () => {

@@ -7,8 +7,12 @@ interface ProtectorRoutesProps {
 }
 
 const CredentialsRoutes = ({ children }: ProtectorRoutesProps) => {
-  const { isLogged } = useAppSelector((state: RootState) => state.user);
-  return isLogged ? children : <Navigate to={"/login"} />;
+  const user = useAppSelector((state: RootState) => state.user);
+  return user.isLogged && localStorage.getItem("token") ? (
+    children
+  ) : (
+    <Navigate to={"/login"} />
+  );
 };
 
 const withCredentials = (component: JSX.Element) => {

@@ -2,16 +2,13 @@ import { useState } from "react";
 import "./Login.scss";
 import { LoginUser } from "../../types/interfaces";
 import { useNavigate } from "react-router";
-import { useAppDispatch } from "../../redux/hooks";
-import { loginUserActionCreator } from "../../redux/slices/userSlice/userSlice";
-import { initialUser as mockUser } from "../../utils/initialStates";
+import useUser from "../../hooks/useUser/useUser";
 
 const initialUser: LoginUser = { password: "", userName: "" };
 
 const Login = () => {
-  const navigator = useNavigate();
-
   const [currentUser, setCurrentUser] = useState<LoginUser>(initialUser);
+  const { loginUser } = useUser();
 
   const handleInputChange = (
     event:
@@ -23,29 +20,21 @@ const Login = () => {
       [event.target.name]: event.target.value,
     });
   };
+  const navigator = useNavigate();
 
-  const dispatch = useAppDispatch();
-
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleLogin = async (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
     event.preventDefault();
-    //TODO: add function to login
-    dispatch(
-      loginUserActionCreator({
-        ...mockUser,
-        isLogged: true,
-        token: "",
-        userName: "Ricardo",
-      })
-    );
-    navigator("/home");
-    return;
+    if (await loginUser(currentUser)) {
+      navigator("/home");
+    }
   };
 
   return (
     <>
       <p className="impact-phrase">where your health is rewarded</p>
       <form
-        onSubmit={handleSubmit}
         noValidate
         autoComplete="off"
         className="form-container"
@@ -75,17 +64,20 @@ const Login = () => {
           />
         </div>
         <div className="login-actions">
-          <button className="login-button" type="submit">
+          <button
+            className="login-button"
+            type="button"
+            onClick={(event) => handleLogin(event)}
+          >
             Login
           </button>
-          <a href="">forgot your password?</a>
         </div>
 
         <button
           className="sign-up-button"
           onClick={() => navigator("/register")}
         >
-          Sing up
+          Sign up
         </button>
       </form>
     </>
