@@ -12,6 +12,7 @@ import withCredentials from "../CredentialRoutes/CredentialRoutes";
 import LoginPage from "../../pages/LoginPage/LoginPage";
 import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage";
 import RegisterPage from "../../pages/RegisterPage/RegisterPage";
+import ExercicesPage from "../../pages/ExcersicesPage/ExercisesPage";
 
 const App = (): JSX.Element => {
   const { isLoading } = useAppSelector((state: RootState) => state.ui);
@@ -43,6 +44,10 @@ const App = (): JSX.Element => {
             withLayout(withBasePage(<h1>FitJourney</h1>))
           )}
         />
+        <Route
+          path="/exercise"
+          element={withCredentials(<ExercicesPage />)}
+        ></Route>
       </Routes>
     </>
   );
