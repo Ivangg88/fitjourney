@@ -8,4 +8,5 @@ export const userSchema = z.object({
   height_cm: z.number().positive(),
   weight_kg: z.number().positive(),
   age: z.number().positive(),
+  experience: z.number().positive(),
 })
