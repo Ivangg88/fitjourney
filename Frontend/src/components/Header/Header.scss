@@ -16,12 +16,13 @@
 
 
 .header {
-width: 80%;
+width: 100%;
 padding: 10px 25px;
 margin-left: 10px;
 margin-right: 10px;
+gap:10px;
 display: flex;
-justify-content: space-between;
+justify-content: flex-end;
 align-items: center;
 background-color:   map.get(colors.$layout, "header-background");
 color: map.get(colors.$text, "header-title");
@@ -29,18 +30,19 @@ box-shadow: 5px 0px 10px map.get(colors.$layout,"header-shadow");
 font-size:map.get(fontSizes.$fontSize, "header-title");
 
   &__welcome-box{
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: bold;
     display: flex;
-    gap:100px;
     align-items: center;
     justify-content: flex-end;
-    width: 60%;
-    min-width:200px ;
+    gap:20px;
+    width:100%;
+    min-width:250px;
     font-size:map.get(fontSizes.$fontSize, "header-links");
     color: map.get(colors.$layout, "header-links");
   }
 
   &__user-action {
-    display: inline-block;
     padding: 10px 20px;
     font-size: 16px;
     text-align: center;
@@ -59,31 +61,20 @@ font-size:map.get(fontSizes.$fontSize, "header-title");
   &__progress-status{
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 20px;
+    line-height: 16px;
   }
 
 
 }
-
-@media (max-width: map.get(responsive.$responsive,"mobile")) {
-  .header {
-    flex-direction: column;
-    gap:15px;
-
-      &__welcome-box{
-        width: 100%;
-        justify-content: space-between;
-      }
-    }
-}
-
 
 .progress {
 	background-color: #d8d8d8;
 	border-radius: 20px;
 	position: relative;
 	margin: 15px 0;
-	height: 15px;
+	height: 10px;
 	width: 120px;
 }
 
@@ -99,4 +90,33 @@ font-size:map.get(fontSizes.$fontSize, "header-title");
 	width: 0;
 	opacity: 0;
 	transition: 1s ease 0.3s;
+}
+
+@media (max-width: map.get(responsive.$responsive,"mobile")) {
+  .header {
+    flex-direction: column;
+    gap:5px;
+
+      &__welcome-box{
+        width: 100%;
+        justify-content:space-between;
+        font-size: 1rem;
+        min-width: 0;
+      }
+
+      &__user-action{
+        height:auto;
+        width: auto;
+        padding: 7px;
+        font-size:0.8rem;
+      }
+    }
+
+    .progress{
+      width:80px
+    }
+
+    .title {
+      font-size:2rem;
+    }
 }

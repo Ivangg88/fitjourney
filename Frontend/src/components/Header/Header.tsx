@@ -53,10 +53,10 @@ export const Header = () => {
               <span>Level: </span>
               <Progress level={50} />
             </div>
+            <button className="header__user-action" onClick={handleLogout}>
+              Logout
+            </button>
           </div>
-          <button className="header__user-action" onClick={handleLogout}>
-            Logout
-          </button>
         </>
       ) : null}
     </div>
