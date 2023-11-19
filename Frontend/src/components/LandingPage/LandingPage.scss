@@ -1,0 +1,194 @@
+@use "../../styles/sass/variables/colors";
+@use "../../styles/sass/variables/fontSizes";
+@use "../../styles/sass/variables/responsive";
+@use "sass:map";
+
+//wod card
+.wod{
+  border: 2px solid #3498db;
+  border-radius: 8px;
+  animation: pulse 2s infinite;
+  max-width: 100%;
+  max-height: 100%;
+  height:auto;
+  width: auto; 
+}
+@keyframes pulse {
+  0% {
+    border-color: #3498db; 
+    box-shadow: 0 0 10px 0 #3498db; 
+  }
+  50% {
+    border-color: #3498db; 
+    box-shadow: 0 0 20px 0 #3498db;
+  }
+  100% {
+    border-color: #3498db; 
+    box-shadow: 0 0 10px 0 #3498db; 
+  }
+}
+.wod-img {
+  height: 100%;
+  width: 100%;
+  max-height: 100%;
+  max-width: 100%;
+  padding: 30px;
+}
+.wod-image{
+  height:auto;
+  width: auto; 
+  max-height: 100%;
+  max-width: 100%;
+  padding: 30px;
+}
+.plan-workout {
+  display: flex;
+  flex-direction: row;
+}
+
+.image-reward {
+  height:200px;
+  width: auto; 
+  max-width: 200px;
+}
+
+.card-plan {
+  background-color: #f3ecd8; 
+  border-radius: 8px;
+  box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.2);
+  position: absolute;
+
+  &__previous-plan {
+    border-radius: 8px;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
+    background-color: map.get(colors.$layout, "previous-workout"); 
+    filter:opacity(40%);
+    z-index: 1; 
+    transform: translate(120px)
+  }
+
+  &__current-plan {
+    border-radius: 8px;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
+    background-color: map.get(colors.$layout, "button-color-login"); 
+    filter:brightness(120%);
+    z-index: 2;
+  }
+  
+  &__next-plan {
+    border-radius: 8px;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
+    background-color: map.get(colors.$layout, "text-base"); 
+    filter:opacity(40%);
+    z-index: 1; 
+    transform: translate(-120px)
+  }
+
+  border: 1px solid #b5a886;
+
+  color: #2e2e2e;
+  font-family: 'Times New Roman', serif; 
+}
+
+
+.container {
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  max-width: 1000px;
+  border-radius: 8px;
+
+ 
+
+  &__input-field {
+    border:map.get(colors.$layout, "input-border") solid 1px;
+    margin:5px;
+    width: 50%;
+    border-radius: 4px;
+    max-width: 200px;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border:map.get(colors.$layout, "input-border") solid 1px;
+  
+  }
+
+  &__login-text {
+    font-weight: bolder;
+    padding: 5px;
+    color: map.get(colors.$text, "login-text");
+  }
+
+  &__button {
+    background-color: transparent;
+    padding: 10px;
+    font-size: 1.2rem;
+    border: none;
+    color: map.get(colors.$layout, "button-icon");
+    cursor: pointer;
+  }
+
+  &__button:hover {
+    scale: calc(1.5);
+  }
+}
+
+.login-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid map.get(colors.$layout, "button-border");
+  border-radius: 5px;
+  color: map.get(colors.$text, "login-text");
+  background-color: map.get(colors.$layout, "base-page-background");
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  width: 100px;
+}
+
+.sign-up-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid map.get(colors.$layout, "button-border");
+  border-radius: 5px;
+  color: map.get(colors.$text, "header-title");
+  background-color: map.get(colors.$layout, "base-page-background");
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  width: 100px;
+}
+
+.login-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  align-items: center;
+}
+
+
+@media (max-width: map.get(responsive.$responsive,"mobile")){
+  .form-container {
+    &__login-text {
+      font-weight: bolder;
+      padding: 5px;
+      text-align: center;
+    }
+    &__input-field {
+      width: 100%;
+    }
+}
+}
