@@ -1,0 +1,100 @@
+.plan-workout {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .image-reward {
+    height:200px;
+    width: auto; 
+    max-width: 200px;
+  }
+  
+  .card-plan {
+    background-color: #f3ecd8; 
+    border-radius: 8px;
+    box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    padding:20px;
+  
+    &__previous-plan {
+      border-radius: 8px;
+      box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
+      background-color: map.get(colors.$layout, "previous-workout"); 
+      filter:opacity(40%);
+      z-index: 1; 
+      transform: translate(120px)
+    }
+  
+    &__current-plan {
+      border-radius: 8px;
+      box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
+      background-color: map.get(colors.$layout, "button-color-login"); 
+      filter:brightness(120%);
+      z-index: 2;
+    }
+    
+    &__next-plan {
+      border-radius: 8px;
+      box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.5);
+      background-color: map.get(colors.$layout, "text-base"); 
+      filter:opacity(40%);
+      z-index: 1; 
+      transform: translate(-120px)
+    }
+  
+    border: 1px solid #b5a886;
+  
+    color: #2e2e2e;
+    font-family: 'Times New Roman', serif; 
+  }
+  
+  
+  .container {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    max-width: 1000px;
+    border-radius: 8px;
+  
+   
+  
+    &__input-field {
+      border:map.get(colors.$layout, "input-border") solid 1px;
+      margin:5px;
+      width: 50%;
+      border-radius: 4px;
+      max-width: 200px;
+    }
+  
+    &__input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 4px;
+      border:map.get(colors.$layout, "input-border") solid 1px;
+    
+    }
+  
+    &__login-text {
+      font-weight: bolder;
+      padding: 5px;
+      color: map.get(colors.$text, "login-text");
+    }
+  
+    &__button {
+      background-color: transparent;
+      padding: 10px;
+      font-size: 1.2rem;
+      border: none;
+      color: map.get(colors.$layout, "button-icon");
+      cursor: pointer;
+    }
+  
+    &__button:hover {
+      scale: calc(1.5);
+    }
+  }

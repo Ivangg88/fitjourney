@@ -4,6 +4,7 @@ import { LoginUser } from "../../types/interfaces";
 import { useNavigate } from "react-router";
 import { useAppDispatch } from "../../redux/hooks";
 import Wod from "../Wod/Wod";
+import WorkoutPlans from "../WorkoutPlans/WorkoutPlans";
 
 const initialUser: LoginUser = { password: "", userName: "" };
 
@@ -18,11 +19,7 @@ const LandingPage = () => {
   return (
     <>
     <div className="container">
-    <div className="plan-workout">
-      <div className="card-plan__previous-plan"><img className="image-reward" src="./adidas-shoes.png" alt="exercise" /></div>
-      <div className="card-plan__current-plan"><img className="image-reward" src="./muscle-mass.png" alt="exercise" /></div>
-      <div className="card-plan__next-plan"><img className="image-reward" src="./rope.png" alt="exercise" /></div>
-    </div>
+     <WorkoutPlans/>
      <Wod />
     </div>
     </>
