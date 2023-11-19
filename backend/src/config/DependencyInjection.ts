@@ -4,13 +4,15 @@ import { dbConfig } from './envs'
 import { MongoUserRepository } from '../infrastructure/users/persistences/MongoUserRepository'
 import { UserRepository } from '../domain/users/UserRepository'
 import { UserRegister } from '../application/user/UserRegister'
-import { RegisterController } from '../app/controllers/RegisterController'
 import { UserLogin } from '../application/user/UserLogin'
-import { LoginController } from '../app/controllers/LoginController'
+import { LoginController } from '../app/controllers/users/LoginController'
 import { UserInfo } from '../application/user/UserInfo'
-import { MeController } from '../app/controllers/MeController'
-import { MongoExercisesRepository } from '../infrastructure/users/persistences/MongoExercicesRepository'
 import { ExerciseRepository } from '../domain/exercises/ExerciseRepository'
+import { MongoExercisesRepository } from '../infrastructure/users/persistences/MongoExercicesRepository'
+import { RegisterController } from '../app/controllers/users/RegisterController'
+import { MeController } from '../app/controllers/users/MeController'
+import { ExerciseInfo } from '../application/exercise/ExerciseInfo'
+import { ExerciseByIdController } from '../app/controllers/exercises/ExerciseByIdController'
 
 export class DependencyInjection {
   public static async RegisterDependencies(): Promise<void> {
@@ -36,7 +38,6 @@ export class DependencyInjection {
     container.register<UserRepository>('UserRepository', {
       useClass: MongoUserRepository,
     })
-
     // dependencies for UserRegister
     container.register('UserRegister', { useClass: UserRegister })
     container.register('RegisterController', { useClass: RegisterController })
@@ -52,6 +53,11 @@ export class DependencyInjection {
     // dependencies for exercise repository
     container.register<ExerciseRepository>('ExerciseRepository', {
       useClass: MongoExercisesRepository,
+    })
+    // dependencies for ExerciseInfo
+    container.register('ExerciseInfo', { useClass: ExerciseInfo })
+    container.register('ExerciseByIdController', {
+      useClass: ExerciseByIdController,
     })
   }
 }

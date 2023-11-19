@@ -1,11 +1,10 @@
 import { Request, Response } from 'express'
 import { injectable, inject } from 'tsyringe'
-
-import { Controller } from './Controller'
-import { UserRegisterSchema } from '../../application/user/schemas/userRegisterSchema'
-import { UserRegister } from '../../application/user/UserRegister'
-import { HttpResponse } from '../routes/HttpResponse'
-import { UserAlreadyExistsError } from '../../application/user/errors/UserAlreadyExistsError'
+import { UserRegister } from '../../../application/user/UserRegister'
+import { UserAlreadyExistsError } from '../../../application/user/errors/UserAlreadyExistsError'
+import { UserRegisterSchema } from '../../../application/user/schemas/userRegisterSchema'
+import { HttpResponse } from '../../routes/HttpResponse'
+import { Controller } from '../Controller'
 
 type RegisterRequest = Request & { body: UserRegisterSchema }
 

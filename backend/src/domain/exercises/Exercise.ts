@@ -26,6 +26,20 @@ export enum Category {
   Strength = 'strength',
   Stretching = 'stretching',
 }
+interface ExercisePrimitives {
+  name: string
+  force: string
+  level: string
+  mechanic: string | null
+  equipment: string
+  primaryMuscles: string[]
+  secondaryMuscles: string[]
+  instructions: string[]
+  category: string
+  images: string[]
+  caloriesBurnedPerMinute: number
+  id: string
+}
 
 export class Exercise extends BaseEntity {
   constructor(
@@ -34,13 +48,13 @@ export class Exercise extends BaseEntity {
     readonly level: Level,
     readonly mechanic: Mechanic | null,
     readonly equipment: Equipment,
-    readonly primaryMuscles: string[],
-    readonly secondaryMuscles: string[],
-    readonly instructions: string[],
+    readonly primaryMuscles: [string, ...string[]],
+    readonly secondaryMuscles: [string, ...string[]],
+    readonly instructions: [string, ...string[]],
     readonly category: Category,
     readonly images: string[],
     readonly caloriesBurnedPerMinute: number,
-    readonly id?: string
+    readonly id: string
   ) {
     super(id)
   }
@@ -72,6 +86,22 @@ export class Exercise extends BaseEntity {
       plainData.caloriesBurnedPerMinute,
       plainData.id
     )
+  }
+  toPrimitives(): ExercisePrimitives {
+    return {
+      name: this.name,
+      force: this.force.toString(),
+      level: this.level.toString(),
+      mechanic: this.mechanic ? this.mechanic.toString() : null,
+      equipment: this.equipment.toString(),
+      primaryMuscles: this.primaryMuscles,
+      secondaryMuscles: this.secondaryMuscles,
+      instructions: this.instructions,
+      category: this.category.toString(),
+      images: this.images,
+      caloriesBurnedPerMinute: this.caloriesBurnedPerMinute,
+      id: this.id,
+    }
   }
   // Métodos adicionales según sea necesario
 }
