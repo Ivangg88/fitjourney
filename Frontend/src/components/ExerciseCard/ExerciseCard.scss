@@ -82,8 +82,8 @@
     margin-bottom: 20px;
     height: 45px;
     width: 90px;
-    background-color: #0f8ca8;
-    color: #D4FA96;
+    background-color:map.get(colors.$layout,"button-green");
+    color: map.get(colors.$layout,"chrono-background");
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
 
