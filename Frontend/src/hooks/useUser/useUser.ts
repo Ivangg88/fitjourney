@@ -12,8 +12,6 @@ const useUser = () => {
 
   const loginUser = async (user: LoginUser) => {
     try {
-      user.userName = "john@doey.com";
-      user.password = "yauta123@sabe";
       const response = await fetchLogin(user);
       if (response === undefined) throw new Error("Error with the login");
 
