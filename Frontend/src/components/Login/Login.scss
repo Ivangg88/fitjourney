@@ -1,0 +1,110 @@
+@use "../../styles/sass/variables/colors";
+@use "../../styles/sass/variables/fontSizes";
+@use "../../styles/sass/variables/responsive";
+@use "sass:map";
+
+.impact-phrase{
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1.5rem;
+  margin-top: 0px;
+}
+
+.form-container {
+  background-color: white;
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 500px;
+  border-radius: 8px;
+
+
+  &__input-field {
+    border:map.get(colors.$layout, "input-border") solid 1px;
+    margin:5px;
+    width: 50%;
+    border-radius: 4px;
+    max-width: 200px;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border:map.get(colors.$layout, "input-border") solid 1px;
+  
+  }
+
+  &__login-text {
+    font-weight: bolder;
+    padding: 5px;
+    color: map.get(colors.$text, "login-text");
+  }
+
+  &__button {
+    background-color: transparent;
+    padding: 10px;
+    font-size: 1.2rem;
+    border: none;
+    color: map.get(colors.$layout, "button-icon");
+    cursor: pointer;
+  }
+
+  &__button:hover {
+    scale: calc(1.5);
+  }
+}
+
+.login-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid map.get(colors.$layout, "button-border");
+  border-radius: 5px;
+  color: map.get(colors.$text, "login-text");
+  background-color: map.get(colors.$layout, "base-page-background");
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  width: 100px;
+}
+
+.sign-up-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid map.get(colors.$layout, "button-border");
+  border-radius: 5px;
+  color: map.get(colors.$text, "header-title");
+  background-color: map.get(colors.$layout, "base-page-background");
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  width: 100px;
+}
+
+.login-actions {
+  display: flex;
+  gap: 4px;
+  width: 100%;
+  align-items: center;
+}
+
+
+@media (max-width: map.get(responsive.$responsive,"mobile")){
+  .form-container {
+    &__login-text {
+      font-weight: bolder;
+      padding: 5px;
+      text-align: center;
+    }
+    &__input-field {
+      width: 100%;
+    }
+}
+}

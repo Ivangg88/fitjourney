@@ -1,0 +1,122 @@
+@use "../../styles/sass/variables/colors";
+@use "../../styles/sass/variables/fontSizes";
+@use "../../styles/sass/variables/responsive";
+@use "sass:map";
+
+.logo {
+  height:40px;
+   width: auto;
+}
+
+.title {
+  font-family: 'Lato', sans-serif;
+  font-size:3rem;
+  margin: 5px;
+}
+
+
+.header {
+width: 100%;
+padding: 10px 25px;
+margin-left: 10px;
+margin-right: 10px;
+gap:10px;
+display: flex;
+justify-content: flex-end;
+align-items: center;
+background-color:   map.get(colors.$layout, "header-background");
+color: map.get(colors.$text, "header-title");
+box-shadow: 5px 0px 10px map.get(colors.$layout,"header-shadow");
+font-size:map.get(fontSizes.$fontSize, "header-title");
+
+  &__welcome-box{
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap:20px;
+    width:100%;
+    min-width:250px;
+    font-size:map.get(fontSizes.$fontSize, "header-links");
+    color: map.get(colors.$layout, "header-links");
+  }
+
+  &__user-action {
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    border: 2px solid map.get(colors.$layout, "button-border");
+    border-radius: 5px;
+    color: map.get(colors.$text, "login-text");
+    background-color: map.get(colors.$layout, "base-page-background");
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    width: 100px;
+  }
+}
+
+.welcome-box {
+  &__progress-status{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    line-height: 16px;
+  }
+
+
+}
+
+.progress {
+	background-color: #d8d8d8;
+	border-radius: 20px;
+	position: relative;
+	margin: 15px 0;
+	height: 10px;
+	width: 120px;
+}
+
+.progress-done {
+  background-color: #0FA861;
+	box-shadow: 0 3px 3px -5px #0FA861, 0 2px 5px #D4FA96;	
+  border-radius: 20px;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 0;
+	opacity: 0;
+	transition: 1s ease 0.3s;
+}
+
+@media (max-width: map.get(responsive.$responsive,"mobile")) {
+  .header {
+    flex-direction: column;
+    gap:5px;
+
+      &__welcome-box{
+        width: 100%;
+        justify-content:space-between;
+        font-size: 1rem;
+        min-width: 0;
+      }
+
+      &__user-action{
+        height:auto;
+        width: auto;
+        padding: 7px;
+        font-size:0.8rem;
+      }
+    }
+
+    .progress{
+      width:80px
+    }
+
+    .title {
+      font-size:2rem;
+    }
+}

@@ -1,0 +1,45 @@
+$primary: #000000;
+$background: #ffffff;
+$background-secondary:#ffffff;
+$text-base:#000000;
+$dark: #0f8ca8;
+$white: #ffffff;
+$gold:#F69038;
+$blue:#90e3f5;
+$green:#0FA861;
+$mindaro:#D4FA96;
+$red: #FF5454;
+
+
+
+$text: (
+  "header-title":$primary,
+  "header-links":$primary,
+  "notfound-page-texts":$primary,
+  "login-text":$primary,
+  "feedback":$primary,
+  "card-title":$text-base,
+  "card-content":$text-base,
+  "actions-button-title":$white
+  );
+  
+  $layout: (
+  "gold":$gold,
+  "text-base":$text-base,
+  "previous-workout": $mindaro,
+  "input-border": $green,
+  "button-border": $dark,
+  "button-color-login": $blue,
+  "button-icon": $primary,
+  "button-background": $primary,
+  "header-background":$background-secondary,
+  "header-shadow":$background-secondary,
+  "sidebar-background":$white,
+  "base-page-background":$background,
+  "feedback-background":$background-secondary,
+  "shadows":$primary,
+  "button-red":$red,
+  "button-green":$green,
+  "card-background":$background,
+  "chrono-background":$background
+);

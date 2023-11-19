@@ -1,0 +1,94 @@
+@use "../../styles/sass/variables/colors";
+@use "../../styles/sass/variables/fontSizes";
+@use "../../styles/sass/variables/responsive";
+@use "sass:map";
+
+
+.exercise{
+  max-width: 370px;
+  min-height: 580px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color:  map.get(colors.$layout,"card-background");
+  padding: 20px;
+  gap: 10px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  &__title{
+    text-align: center;
+    color:map.get(colors.$text, "card-title");
+  }
+
+  &__picture {
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+    box-shadow: 4px 4px 8px 0px map.get(colors.$layout,"shadows");
+  }
+
+  &__instructions{
+    display: flex;
+    flex-direction: column;
+    color:map.get(colors.$text, "card-content");
+    gap: 20px;
+    padding: 0;
+    padding-left: 20px;
+  }
+
+  &__actions-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 45px;
+
+  }
+}
+
+.actions-container{
+  &__button{
+    min-width: 100px;
+    padding: 10px;
+    border-radius: 15px;
+    font-weight: bold;
+    color:map.get(colors.$text,"actions-button-title");
+    background-color:  map.get(colors.$layout, "base-page-background");
+    font-size: 20px;
+    cursor: pointer;
+
+ 
+
+    &--stop{
+      background-color: map.get(colors.$layout,"button-red");
+    }
+
+    &--start{
+      background-color:map.get(colors.$layout,"button-green");
+    }
+
+    &--complete{
+      background-color:map.get(colors.$layout,"button-green");
+    }
+  }
+  &__chrono{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    height: 45px;
+    width: 90px;
+    background-color:map.get(colors.$layout,"button-green");
+    color: map.get(colors.$layout,"chrono-background");
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+}
+
+.disable{
+  background-color: #999;
+}
