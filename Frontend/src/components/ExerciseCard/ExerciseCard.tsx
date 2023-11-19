@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Exercise } from "../../types/interfaces";
 import "./ExerciseCard.scss";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Chrono from "../Chrono/Chrono";
 interface ExerciseCardProps {
   exercise: Exercise;
@@ -37,6 +37,7 @@ const ExerciseCard = ({ exercise }: ExerciseCardProps): JSX.Element => {
   };
   return (
     <section className="exercise">
+      <NavLink to={"/home"}>Back to home</NavLink>
       <h2 className="exercise__title">{exercise.name}</h2>
       <Chrono
         className="actions-container__chrono"

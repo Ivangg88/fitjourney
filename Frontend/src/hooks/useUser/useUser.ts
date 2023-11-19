@@ -5,34 +5,42 @@ import {
   loginUserActionCreator,
   logoutUserActionCreator,
 } from "../../redux/slices/userSlice/userSlice";
-import { initialUser } from "../../utils/initialStates";
+import { fetchLogin, fetchUser } from "../services";
 
 const useUser = () => {
   const dispatch = useAppDispatch();
 
-  const loginUser = (user: LoginUser) => {
+  const loginUser = async (user: LoginUser) => {
     try {
-      //TODO: loginUser from the repository.
-      const token = JSON.stringify(user);
-      localStorage.setItem("token", token);
-      getUser(user.userName);
+      const response = await fetchLogin(user);
+      if (response === undefined) throw new Error("Error with the login");
+
+      await getUser(user.userName);
+      return true;
     } catch (error) {
       toast.error((error as Error).message);
+      return false;
     }
   };
 
-  const getUser = (userName: string) => {
+  const getUser = async (userName: string) => {
     try {
       const token = localStorage.getItem("token");
-      if (token === null) throw new Error("There isn´t a logged user.");
 
-      //TODO:getUser from repository.
+      const userFromDB = await fetchUser();
+
+      if (!userFromDB) throw new Error("User not found");
 
       const userToLogin: UserLoged = {
-        ...initialUser,
+        birthDate: userFromDB.birthDate,
+        email: userFromDB.email,
+        height: userFromDB.email,
+        registerDate: userFromDB.registerDate,
+        weight: userFromDB.weight,
         isLogged: true,
-        token,
-        userName: userName,
+        token: token!,
+        userName: userFromDB.name,
+        name: userFromDB.name,
       };
 
       dispatch(loginUserActionCreator(userToLogin));

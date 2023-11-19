@@ -9,23 +9,10 @@ export const initialUser: UserLoged = {
   isLogged: false,
   registerDate: "",
   token: "",
+  name: "",
 };
 
 export const getInitialUser = (): UserLoged => {
-  const token = localStorage.getItem("token");
-
-  if (token) {
-    const user: Token = JSON.parse(token);
-
-    const userLoged: UserLoged = {
-      ...initialUser,
-      userName: user.userName,
-      isLogged: true,
-      token: token,
-    };
-
-    return userLoged;
-  }
   return initialUser;
 };
 

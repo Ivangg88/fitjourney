@@ -42,7 +42,8 @@ export class UserRegister {
       const dailyPlan = new DailyPlan(
         i + 1,
         [exercises[Math.floor(Math.random() * exercises.length)]],
-        new ObjectId().toHexString()
+        new ObjectId().toHexString(),
+        Math.floor(Math.random() * 100)
       )
       dailyPlans.push(dailyPlan)
     }

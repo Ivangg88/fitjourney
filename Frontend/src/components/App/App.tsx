@@ -6,8 +6,6 @@ import { useAppSelector } from "../../redux/hooks";
 import { RootState } from "../../redux/store";
 import "./App.scss";
 import Loading from "../Loading/Loading";
-import withLayout from "../Layout/Layout";
-import withBasePage from "../../pages/BasePage/BasePage";
 import withCredentials from "../CredentialRoutes/CredentialRoutes";
 import LoginPage from "../../pages/LoginPage/LoginPage";
 import NotFoundPage from "../../pages/NotFoundPage/NotFoundPage";
@@ -16,7 +14,6 @@ import RegisterPage from "../../pages/RegisterPage/RegisterPage";
 import LandingPage from "../../pages/LandingPage/LandingPage";
 
 import ExercicesPage from "../../pages/ExcersicesPage/ExercisesPage";
-
 
 const App = (): JSX.Element => {
   const { isLoading } = useAppSelector((state: RootState) => state.ui);
@@ -27,7 +24,7 @@ const App = (): JSX.Element => {
         bodyClassName="toast-body"
         toastClassName="toast"
         position="top-center"
-        autoClose={2000}
+        autoClose={500}
         hideProgressBar={false}
         newestOnTop
         closeOnClick
@@ -42,12 +39,7 @@ const App = (): JSX.Element => {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/*" element={<NotFoundPage />} />
-        <Route
-          path="/home"
-          element={withCredentials(
-              (<LandingPage />)
-          )}
-        />
+        <Route path="/home" element={withCredentials(<LandingPage />)} />
         <Route
           path="/exercise"
           element={withCredentials(<ExercicesPage />)}

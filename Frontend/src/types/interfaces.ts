@@ -7,15 +7,24 @@ export interface LoginUser {
   password: string;
 }
 
-export interface UserLoged {
-  userName: string;
+export interface RegistrationData {
+  name: string;
+  email: string;
+}
+
+export interface UserFromDB {
+  name: string;
   email: string;
   weight: string;
   height: string;
   birthDate: string;
   registerDate: string;
+}
+
+export interface UserLoged extends UserFromDB {
   token: string;
   isLogged: boolean;
+  userName: string;
 }
 export interface Token {
   userName: string;
@@ -38,5 +47,4 @@ export interface Exercise {
 
 export interface InitialDataState {
   exercises: Array<Exercise>;
-
 }

@@ -13,6 +13,10 @@ import { RegisterController } from '../app/controllers/users/RegisterController'
 import { MeController } from '../app/controllers/users/MeController'
 import { ExerciseInfo } from '../application/exercise/ExerciseInfo'
 import { ExerciseByIdController } from '../app/controllers/exercises/ExerciseByIdController'
+import { ActivateUserWeeklyPlan } from '../application/user/weeklyplan/ActivateUserWeeklyPlan'
+import { MarkDailyPlayAsCompleted } from '../application/user/weeklyplan/MarkDailyPlayAsCompleted'
+import { ActivateUserWeeklyPlanController } from '../app/controllers/users/ActivateUserWeeklyPlanController'
+import { MarkDailyPlayAsCompletedController } from '../app/controllers/users/MarkDailyPlanAsComletedController'
 
 export class DependencyInjection {
   public static async RegisterDependencies(): Promise<void> {
@@ -47,6 +51,22 @@ export class DependencyInjection {
     // dependencies for UserInfo
     container.register('UserInfo', { useClass: UserInfo })
     container.register('MeController', { useClass: MeController })
+
+    // weekly plan
+    container.register('ActivateUserWeeklyPlan', {
+      useClass: ActivateUserWeeklyPlan,
+    })
+    container.register('ActivateUserWeeklyPlanController', {
+      useClass: ActivateUserWeeklyPlanController,
+    })
+
+    // dependencies for daily plan
+    container.register('MarkDailyPlayAsCompleted', {
+      useClass: MarkDailyPlayAsCompleted,
+    })
+    container.register('MarkDailyPlayAsCompletedController', {
+      useClass: MarkDailyPlayAsCompletedController,
+    })
   }
 
   private static InstallExerciseDependencies(): void {
