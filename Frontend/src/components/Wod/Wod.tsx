@@ -8,6 +8,7 @@ const Wod = () => {
     <>
       <div onClick={() => navigator("/exercise")} className="wod">
         <div className="wod-image">
+          <span className="wod-title">Daily plan</span>
           <img className="wod-img" src="wod.svg" alt="workout of the day" />
         </div>
       </div>

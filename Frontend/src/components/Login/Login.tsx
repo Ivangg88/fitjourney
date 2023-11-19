@@ -65,6 +65,7 @@ const Login = () => {
         </div>
         <div className="login-actions">
           <button
+            autoFocus
             className="login-button"
             type="button"
             onClick={(event) => handleLogin(event)}
