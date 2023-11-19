@@ -4,11 +4,15 @@ import "./ExerciseCard.scss";
 import { toast } from "react-toastify";
 import { NavLink, useNavigate } from "react-router-dom";
 import Chrono from "../Chrono/Chrono";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { loadExercisesActionCreator } from "../../redux/slices/dataSlice/dataSlice";
+import { RootState } from "../../redux/store";
 interface ExerciseCardProps {
   exercise: Exercise;
 }
 
 const ExerciseCard = ({ exercise }: ExerciseCardProps): JSX.Element => {
+  const { exercises } = useAppSelector((state: RootState) => state.data);
   const [startedExercise, setStartedExercise] = useState(false);
   const [chronoTime, setChronoTime] = useState(10);
   const navigator = useNavigate();
@@ -27,12 +31,18 @@ const ExerciseCard = ({ exercise }: ExerciseCardProps): JSX.Element => {
     setStartedExercise(false);
   };
 
+  const dispatch = useAppDispatch();
   const handleCompleteButton = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     event.preventDefault();
     toast.success("Exercise updated");
-    navigator("/home");
+    const newExercises = [...exercises];
+    newExercises.shift();
+    console.log(newExercises);
+    dispatch(loadExercisesActionCreator(newExercises));
+    setChronoTime(30);
+    setStartedExercise(false);
     //TODO:send to backend the new status
   };
   return (

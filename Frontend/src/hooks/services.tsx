@@ -68,18 +68,14 @@ export async function fetchUser(): Promise<UserFromDB | null> {
   }
 }
 
-
-
 export const fetchPatient = async (token: string | null) => {
-	const response = await fetch(`http://localhost:3001/users/me`, {
-		method: "GET",
-		headers: {
-		},
-		body: JSON.stringify(token)
-	})
-	return response
-}
-
+  const response = await fetch(`http://localhost:3001/users/me`, {
+    method: "POST",
+    headers: {},
+    body: JSON.stringify(token),
+  });
+  return response;
+};
 
 export const fetchRegistration = async (data: RegistrationData | null) => {
   const response = await fetch(`http://localhost:3001/users/register`, {

@@ -14,6 +14,9 @@ import RegisterPage from "../../pages/RegisterPage/RegisterPage";
 import LandingPage from "../../pages/LandingPage/LandingPage";
 
 import ExercicesPage from "../../pages/ExcersicesPage/ExercisesPage";
+import withLayout from "../Layout/Layout";
+import withBasePage from "../../pages/BasePage/BasePage";
+import ExercisePlanPage from "../../pages/ExercisePlanPage/ExercisePlanPage";
 
 const App = (): JSX.Element => {
   const { isLoading } = useAppSelector((state: RootState) => state.ui);
@@ -40,6 +43,7 @@ const App = (): JSX.Element => {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/*" element={<NotFoundPage />} />
         <Route path="/home" element={withCredentials(<LandingPage />)} />
+        <Route path="/weeklyplan" element={<ExercisePlanPage />}></Route>
         <Route
           path="/exercise"
           element={withCredentials(<ExercicesPage />)}

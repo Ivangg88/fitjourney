@@ -1,11 +1,17 @@
 .text-image {
   padding:14px;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .plan-workout {
-    display: flex;
-    flex-direction: row;
-    max-height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   }
   
   .image-reward {
@@ -13,17 +19,14 @@
       width: 100%;
       max-height: 100%;
       max-width: 100%;
-      padding: 30px;
-      min-width: 40%;
-      min-height: 40%;
   }
   
   .card-plan {
+    padding: 20px;
     background-color: #f3ecd8; 
     border-radius: 8px;
     box-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.2);
     position: absolute;
-    
   
     &__previous-plan {
       border-radius: 8px;
@@ -31,7 +34,7 @@
       background-color: white;
       filter:opacity(40%);
       z-index: 1; 
-      transform: translate(120px)
+      transform: translate(50px)
     }
   
     &__current-plan {
@@ -48,13 +51,10 @@
       background-color: white; 
       filter:opacity(40%);
       z-index: 1; 
-      transform: translate(-120px)
+      transform: translate(-50px)
     }
 
-    
-  
-    border: 1px solid #b5a886;
-  
+    border: 1px solid #b5a886;  
     color: #2e2e2e;
     font-family: 'Times New Roman', serif; 
   }

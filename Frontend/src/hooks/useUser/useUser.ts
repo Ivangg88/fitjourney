@@ -6,9 +6,11 @@ import {
   logoutUserActionCreator,
 } from "../../redux/slices/userSlice/userSlice";
 import { fetchLogin, fetchUser } from "../services";
+import useData from "../useData/useData";
 
 const useUser = () => {
   const dispatch = useAppDispatch();
+  const { getExercises } = useData();
 
   const loginUser = async (user: LoginUser) => {
     try {
@@ -44,6 +46,8 @@ const useUser = () => {
       };
 
       dispatch(loginUserActionCreator(userToLogin));
+      getExercises();
+
       toast.success(`User: ${userToLogin.userName} logged successfully`);
     } catch (error) {
       toast.error((error as Error).message);
