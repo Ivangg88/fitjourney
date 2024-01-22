@@ -1,16 +1,16 @@
 # FitJourney
 
-## Descripción del Problema
+## Problem Description
 
-Muchos pacientes con obesidad, especialmente aquellos que han pasado por cirugía bariátrica (bypass gástrico) o han utilizado fármacos para la pérdida de peso rápida, enfrentan el riesgo de perder masa muscular. Esta pérdida de masa muscular puede conducir a la desnutrición en casos extremos. Es crucial diseñar una plataforma que brinde apoyo integral, contención emocional, educación y seguimiento personalizado a estos pacientes para optimizar su salud y bienestar. FitJourney está diseñada para ser utilizada por organizaciones y hospitales que buscan proporcionar planes de ejercicio semanales personalizados a sus pacientes.
+Many patients with obesity, especially those who have undergone bariatric surgery (gastric bypass) or have used medications for rapid weight loss, face the risk of losing muscle mass. This loss of muscle mass can lead to malnutrition in extreme cases. It is crucial to design a platform that provides comprehensive support, emotional support, education, and personalized monitoring to these patients to optimize their health and well-being. FitJourney is designed to be used by organizations and hospitals looking to provide personalized weekly exercise plans to their patients.
 
-## Objetivo
+## Objetive
 
-El objetivo principal de FitJourney es mejorar la calidad de vida de los pacientes con obesidad, proporcionándoles herramientas efectivas para mantener y fortalecer su masa muscular después de intervenciones como la cirugía bariátrica. Las organizaciones pueden utilizar nuestra plataforma para crear y asignar planes de ejercicios semanales personalizados a sus pacientes y hacer un seguimiento de su progreso. En el futuro, planeamos asociarnos con empresas de fitness para gamificar estos planes de ejercicios, ofreciendo recompensas para motivar a los pacientes a alcanzar sus objetivos.
+The main objective of FitJourney is to improve the quality of life for patients with obesity by providing them with effective tools to maintain and strengthen their muscle mass after interventions such as bariatric surgery. Organizations can use our platform to create and assign personalized weekly exercise plans to their patients and track their progress. In the future, we plan to partner with fitness companies to gamify these exercise plans, offering rewards to motivate patients to achieve their goals.
 
-## Modelo de Negocio
+## Business Model
 
-Nuestro modelo de negocio se basa en trabajar con organizaciones y hospitales que buscan mejorar la salud y el bienestar de sus pacientes. Estas organizaciones pueden utilizar FitJourney para proporcionar planes de ejercicios personalizados a sus pacientes y hacer un seguimiento de su progreso. Buscamos asociarnos con empresas de fitness que puedan proporcionar recompensas para gamificar el proceso y motivar a los pacientes a alcanzar sus objetivos.
+Our business model is based on working with organizations and hospitals aiming to improve the health and well-being of their patients. These organizations can use FitJourney to provide personalized exercise plans to their patients and track their progress. We seek to partner with fitness companies that can provide rewards to gamify the process and motivate patients to reach their goals.
 
 ## Contribuidores
 

@@ -1,29 +1,29 @@
 # FitJourney Frontend
 
-Este repositorio contiene el código frontend de FitJourney, una plataforma diseñada para ayudar a las organizaciones y hospitales a proporcionar planes de ejercicio semanales personalizados a sus pacientes.
+This repository contains the frontend code of FitJourney, a platform designed to help organizations and hospitals provide personalized weekly exercise plans to their patients.
 
-## Tecnologías Utilizadas
+## Used Technologies
 
-Este proyecto utiliza varias tecnologías y librerías clave:
+This project utilizes several key technologies and libraries:
 
-- **React**: Una biblioteca de JavaScript para construir interfaces de usuario.
-- **TypeScript**: Un superconjunto de JavaScript que añade tipado estático y objetos basados en clases.
-- **Redux**: Una biblioteca de JavaScript para gestionar el estado de la aplicación.
-- **SCSS**: Un preprocesador de CSS que añade características como variables, anidamiento y mixins.
+- **React**: A JavaScript library for building user interfaces.
+- **TypeScript**: A superset of JavaScript that adds static typing and class-based objects.
+- **Redux**: A JavaScript library for managing the application state.
+- **SCSS**: A CSS preprocessor that adds features like variables, nesting, and mixins.
 
-## Cómo Utilizar
+## How to Use
 
-Para probar el proyecto en tu entorno local, sigue estos pasos:
+To test the project in your local environment, follow these steps:
 
-1. Clona el repositorio en tu máquina local.
-2. Navega hasta el directorio Frontend del proyecto.
-3. Instala las dependencias con `npm install`.
-4. Inicia el servidor de desarrollo con `npm start`.
-5. Abre tu navegador y visita `http://localhost:3000`.
+1. Clone the repository to your local machine.
+2. Navigate to the Frontend directory of the project.
+3. Install dependencies with npm install.
+4. Start the development server with npm start.
+5. Open your browser and visit http://localhost:3000.
 
-Por favor, asegúrate de tener instalado Node.js y npm en tu máquina antes de seguir estos pasos.
+   Please make sure to have Node.js and npm installed on your machine before following these steps.
 
-## Contribuidores
+## Contributors
 
 - [Ivan Garcia Guerrero](https://github.com/Ivangg88)
 - [Ricardo Dutra Alvarez](https://github.com/rikiDalvarez)
