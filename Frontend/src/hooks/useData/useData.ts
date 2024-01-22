@@ -4,8 +4,7 @@ import {
   closeLoadingModalActionCreator,
   openLoadingModalActionCreator,
 } from "../../redux/slices/uiSlice/uiSlice";
-import { Exercise } from "../../types/interfaces";
-import { mockExercise, mockExercises } from "../../utils/mockData";
+import { mockExercises } from "../../utils/mockData";
 import { loadExercisesActionCreator } from "../../redux/slices/dataSlice/dataSlice";
 import { useCallback } from "react";
 

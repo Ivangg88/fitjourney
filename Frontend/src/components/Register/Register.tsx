@@ -1,7 +1,6 @@
 import { useState } from "react";
 import "./Register.scss";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 import { fetchRegistration } from "./../../hooks/services";
 
 interface User {
@@ -13,7 +12,14 @@ interface User {
   age: number;
 }
 
-const initialUser: User = { password: "", email: "", name: "", height_cm: 0, weight_kg:0, age:0  };
+const initialUser: User = {
+  password: "",
+  email: "",
+  name: "",
+  height_cm: 0,
+  weight_kg: 0,
+  age: 0,
+};
 
 const Register = () => {
   const navigator = useNavigate();
@@ -21,7 +27,6 @@ const Register = () => {
   const [currentUser, setCurrentUser] = useState<User>(initialUser);
 
   const handleInputChange = (
-
     event:
       | React.ChangeEvent<HTMLTextAreaElement>
       | React.ChangeEvent<HTMLInputElement>
@@ -31,8 +36,11 @@ const Register = () => {
     const { name, value } = event.target;
 
     // Convert numerical fields to numbers
-    const numericValue = name === 'height_cm' || name === 'weight_kg' || name === 'age' ? +value : value;
-  
+    const numericValue =
+      name === "height_cm" || name === "weight_kg" || name === "age"
+        ? +value
+        : value;
+
     setCurrentUser({
       ...currentUser,
       [name]: numericValue,
@@ -40,23 +48,28 @@ const Register = () => {
   };
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    console.log({currentUser})
+    console.log({ currentUser });
     event.preventDefault();
 
-		try {
-			const response = await fetchRegistration({ name: currentUser.name, email: currentUser.email, password: currentUser.password, height_cm: currentUser.height_cm, weight_kg: currentUser.weight_kg, age: currentUser.age });
-			if (response.ok) {
-				alert("Registration completed succesfully")
-				navigator("/login")
-
-			} else {
-				alert("Email and/or name already in use");
-				console.error("registration failed")
-			}
-		} catch (error) {
-			console.error("an error occurred:", error)
-		}
-	
+    try {
+      const response = await fetchRegistration({
+        name: currentUser.name,
+        email: currentUser.email,
+        password: currentUser.password,
+        height_cm: currentUser.height_cm,
+        weight_kg: currentUser.weight_kg,
+        age: currentUser.age,
+      });
+      if (response.ok) {
+        alert("Registration completed succesfully");
+        navigator("/login");
+      } else {
+        alert("Email and/or name already in use");
+        console.error("registration failed");
+      }
+    } catch (error) {
+      console.error("an error occurred:", error);
+    }
 
     navigator("/home");
 
@@ -71,8 +84,10 @@ const Register = () => {
       className="register-form-container"
       data-testid="loginForm"
     >
-      <h1 className="register-form-container__login-text">Create your account</h1>
-name
+      <h1 className="register-form-container__login-text">
+        Create your account
+      </h1>
+      name
       <div className="register-form-container__input-field">
         <label htmlFor="name"></label>
         <input
@@ -84,7 +99,7 @@ name
           onChange={handleInputChange}
         />
       </div>
-email
+      email
       <div className="register-form-container__input-field">
         <label htmlFor="email"></label>
         <input

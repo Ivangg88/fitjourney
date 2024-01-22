@@ -1,4 +1,4 @@
-import { Token, UserLoged } from "../types/interfaces";
+import { UserLoged } from "../types/interfaces";
 
 export const initialUser: UserLoged = {
   userName: "",

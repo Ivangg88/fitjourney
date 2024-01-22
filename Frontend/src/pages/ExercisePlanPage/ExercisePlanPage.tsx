@@ -1,4 +1,3 @@
-import { Navigate } from "react-router";
 import ExerciseDescription from "../../components/ExerciseDescription/ExerciseDescription";
 import withLayout from "../../components/Layout/Layout";
 import { useAppSelector } from "../../redux/hooks";

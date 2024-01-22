@@ -4,7 +4,7 @@ import { LoginUser } from "../../types/interfaces";
 import { useNavigate } from "react-router";
 import useUser from "../../hooks/useUser/useUser";
 
-const initialUser: LoginUser = { password: "", userName: "" };
+const initialUser: LoginUser = { password: "00000000", userName: "Thomas" };
 
 const Login = () => {
   const [currentUser, setCurrentUser] = useState<LoginUser>(initialUser);
@@ -46,8 +46,9 @@ const Login = () => {
             className="form-container__input"
             id="userName"
             name="userName"
-            placeholder="email"
+            placeholder="username"
             type="text"
+            value={currentUser.userName}
             onChange={handleInputChange}
           />
         </div>
@@ -60,6 +61,7 @@ const Login = () => {
             name="password"
             placeholder="********"
             type="password"
+            value={currentUser.password}
             onChange={handleInputChange}
           />
         </div>
@@ -74,12 +76,12 @@ const Login = () => {
           </button>
         </div>
 
-        <button
+        {/* <button
           className="sign-up-button"
           onClick={() => navigator("/register")}
         >
           Sign up
-        </button>
+        </button> */}
       </form>
     </>
   );

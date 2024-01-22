@@ -14,8 +14,6 @@ import RegisterPage from "../../pages/RegisterPage/RegisterPage";
 import LandingPage from "../../pages/LandingPage/LandingPage";
 
 import ExercicesPage from "../../pages/ExcersicesPage/ExercisesPage";
-import withLayout from "../Layout/Layout";
-import withBasePage from "../../pages/BasePage/BasePage";
 import ExercisePlanPage from "../../pages/ExercisePlanPage/ExercisePlanPage";
 
 const App = (): JSX.Element => {

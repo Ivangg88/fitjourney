@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Exercise } from "../../types/interfaces";
 import "./ExerciseCard.scss";
 import { toast } from "react-toastify";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Chrono from "../Chrono/Chrono";
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 import { loadExercisesActionCreator } from "../../redux/slices/dataSlice/dataSlice";
@@ -15,7 +15,6 @@ const ExerciseCard = ({ exercise }: ExerciseCardProps): JSX.Element => {
   const { exercises } = useAppSelector((state: RootState) => state.data);
   const [startedExercise, setStartedExercise] = useState(false);
   const [chronoTime, setChronoTime] = useState(10);
-  const navigator = useNavigate();
 
   const handleStartButton = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>

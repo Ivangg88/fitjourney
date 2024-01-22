@@ -1,11 +1,10 @@
 import { toast } from "react-toastify";
 import { useAppDispatch } from "../../redux/hooks";
-import { LoginUser, UserLoged } from "../../types/interfaces";
+import { LoginUser, UserFromDB, UserLoged } from "../../types/interfaces";
 import {
   loginUserActionCreator,
   logoutUserActionCreator,
 } from "../../redux/slices/userSlice/userSlice";
-import { fetchLogin, fetchUser } from "../services";
 import useData from "../useData/useData";
 
 const useUser = () => {
@@ -14,8 +13,9 @@ const useUser = () => {
 
   const loginUser = async (user: LoginUser) => {
     try {
-      const response = await fetchLogin(user);
-      if (response === undefined) throw new Error("Error with the login");
+      //TODO: implement the conection with the backend app.
+      // const response = await fetchLogin(user);
+      // if (response === undefined) throw new Error("Error with the login");
 
       await getUser(user.userName);
       return true;
@@ -27,9 +27,19 @@ const useUser = () => {
 
   const getUser = async (userName: string) => {
     try {
-      const token = localStorage.getItem("token");
+      //TODO: delete from line 332 to line 41 whent the backend conection is ready.
+      const userFromDB: UserFromDB = {
+        birthDate: "06-06-1988",
+        email: "mocjUser@mockmail.net",
+        height: "185",
+        name: userName,
+        registerDate: "2000-01-01",
+        weight: "95",
+      };
 
-      const userFromDB = await fetchUser();
+      localStorage.setItem("token", userFromDB.email);
+
+      const token = localStorage.getItem("token");
 
       if (!userFromDB) throw new Error("User not found");
 
@@ -47,7 +57,6 @@ const useUser = () => {
 
       dispatch(loginUserActionCreator(userToLogin));
       getExercises();
-
       toast.success(`User: ${userToLogin.userName} logged successfully`);
     } catch (error) {
       toast.error((error as Error).message);
